@@ -35,8 +35,12 @@ export default function Sitemap() {
             <div className="bg-sky-600 p-2 rounded-lg text-white">
               <Layout size={24} />
             </div>
-            <h1 className="text-3xl font-bold tracking-tight">AirFuture LP Sitemap</h1>
+            <h1 className="text-3xl font-bold text-slate-900">AirFuture LP Sitemap</h1>
           </div>
+          <p className="text-slate-500 flex items-center gap-2 text-sm mb-2">
+            最終更新: 2026/01/27 18:30 JST
+            <span className="w-2 h-2 bg-green-500 rounded-full animate-pulse"></span>
+          </p>
           <p className="text-slate-500">
             全10種のニッチ別LPと、共通ページの構造を可視化しています。
           </p>
