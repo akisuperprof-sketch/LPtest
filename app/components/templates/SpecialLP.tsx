@@ -132,17 +132,38 @@ export default function SpecialLPTemplate({ data }: { data: LPData }) {
                         </p>
 
                         {/* CTA Button */}
-                        <div className="mt-10 flex flex-col sm:flex-row gap-4">
-                            <a
-                                href={data.buyLink}
-                                className={`bg-white ${data.colorTheme.text} font-bold py-4 px-8 rounded-full text-lg shadow-lg relative overflow-hidden group transition-all text-center hover:bg-slate-100 hover:scale-105`}
-                            >
-                                <span className="flex items-center justify-center gap-2">
-                                    効果を試す
-                                    <CheckCircle2 size={20} />
-                                </span>
-                            </a>
-                            <div className="flex items-center justify-center gap-2 text-slate-300 mt-2 sm:mt-0 px-4 bg-black/30 rounded-full py-1 backdrop-blur-sm">
+                        <div className="mt-10 flex flex-col gap-4">
+                            <div className="flex flex-col sm:flex-row gap-4">
+                                <a
+                                    href={data.buyLink}
+                                    className={`bg-white ${data.colorTheme.text} font-bold py-4 px-8 rounded-full text-lg shadow-lg relative overflow-hidden group transition-all text-center hover:bg-slate-100 hover:scale-105 flex-1`}
+                                >
+                                    <span className="flex items-center justify-center gap-2">
+                                        効果を試す
+                                        <CheckCircle2 size={20} />
+                                    </span>
+                                </a>
+                                <a
+                                    href="https://line.me/R/ti/p/@example" // Replace with actual LINE URL
+                                    className="bg-[#06C755] text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg relative overflow-hidden group transition-all text-center hover:opacity-90 hover:scale-105 flex-1"
+                                >
+                                    <span className="flex items-center justify-center gap-2">
+                                        LINEで相談する
+                                        <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor"><path d="M21.156 12.023c0-4.832-4.526-8.75-10.11-8.75-5.583 0-10.109 3.918-10.109 8.75 0 4.316 3.614 7.915 8.441 8.623.328.07.775.215.89.493.102.247.067.632.032.909l-.173 1.056c-.053.308-.246 1.2.98.718 1.226-.481 6.643-3.913 9.066-6.697 1.638-1.854 2.502-3.8 2.502-5.748l-.007-.007-1.512.653zm-10.11-6.173c4.27 0 7.746 2.924 7.746 6.517 0 3.593-3.476 6.517-7.746 6.517-4.27 0-7.746-2.924-7.746-6.517 0-3.593 3.476-6.517 7.746-6.517zM5.56 13.578h1.121v-3.13h1.724v-1.07h-2.845v4.2zm4.332 0h1.121v-1.638h1.861v1.638h1.12v-4.2h-1.12v1.492h-1.861v-1.492h-1.121v4.2zm6.757 0h2.956v-1.07h-1.836v-.5h1.836v-1.066h-1.836v-.494h1.836v-1.07h-2.956v4.2zm-2.146-2.617l1.018 1.688 1.042-1.688h1.258l-1.63 2.617 1.69 2.617h-1.3l-1.06-1.748-1.034 1.748h-1.284l1.66-2.617-1.603-2.617h1.243z" /></svg>
+                                    </span>
+                                </a>
+                            </div>
+
+                            {/* Pro-only Free Demo Banner */}
+                            < div className="bg-gradient-to-r from-amber-200 to-yellow-400 p-1 rounded-full shadow-md animate-pulse">
+                                <a href={`${data.buyLink}&demo=true`} className="block bg-black/90 text-yellow-400 text-center text-sm font-bold py-2 px-4 rounded-full hover:bg-black transition-colors">
+                                    <span className="mr-2">✨ 法人・店舗限定</span>
+                                    AirFuture Pro 1週間無料デモ受付中
+                                    <span className="ml-2">→</span>
+                                </a>
+                            </div>
+
+                            <div className="flex items-center justify-center gap-2 text-slate-300 mt-2 sm:mt-0 px-4 bg-black/30 rounded-full py-1 backdrop-blur-sm mx-auto">
                                 <ShieldCheck size={18} className="text-emerald-400" />
                                 <span className="text-sm">30日間全額返金保証付き</span>
                             </div>

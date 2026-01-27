@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Inter, Noto_Sans_JP } from "next/font/google";
 import "./globals.css";
+import Analytics from "@/components/Analytics";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-inter" });
 const notoJp = Noto_Sans_JP({
@@ -23,6 +24,7 @@ export default function RootLayout({
     <html lang="ja">
       <body className={`${inter.variable} ${notoJp.variable} font-sans antialiased bg-slate-50 text-slate-900`}>
         {children}
+        <Analytics />
       </body>
     </html>
   );

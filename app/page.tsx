@@ -79,6 +79,37 @@ export default function Sitemap() {
         </section>
 
         <div className="grid lg:grid-cols-2 gap-12">
+          <section>
+            <h2 className="text-xl font-bold mb-6 flex items-center gap-2 text-slate-800 border-b pb-2">
+              <span className="text-2xl">🎥</span> プロモーション動画 (Creative Assets)
+            </h2>
+            <div className="grid md:grid-cols-2 gap-6">
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <h3 className="font-bold flex items-center gap-2 mb-4 text-sky-600">
+                  受験生応援モデル PV
+                </h3>
+                <video controls className="w-full rounded-lg shadow-md bg-black" poster="/hero-student.png">
+                  <source src="/promo-student.mp4" type="video/mp4" />
+                  Your browser does not support the video tag.
+                </video>
+                <p className="text-xs text-slate-500 mt-2 text-center">生成された動画ファイル: promo-student.mp4</p>
+              </div>
+              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                <h3 className="font-bold flex items-center gap-2 mb-4 text-orange-600">
+                  ペットモデル PV
+                </h3>
+                <div className="aspect-video bg-slate-100 rounded-lg flex items-center justify-center text-slate-400">
+                  {/* Placeholder until generated, or video tag if ready */}
+                  <video controls className="w-full h-full rounded-lg shadow-md bg-black">
+                    <source src="/promo-pet.mp4" type="video/mp4" />
+                    生成中 / 準備中...
+                  </video>
+                </div>
+                <p className="text-xs text-slate-500 mt-2 text-center">生成された動画ファイル: promo-pet.mp4</p>
+              </div>
+            </div>
+          </section>
+
           {/* Buy Flow */}
           <section>
             <h2 className="text-xl font-bold mb-6 flex items-center gap-2">
