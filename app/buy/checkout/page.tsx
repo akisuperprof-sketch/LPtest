@@ -51,6 +51,7 @@ function CheckoutContent() {
         standard: "AirFuture Standard"
     };
 
+    const displayModelName = modelNames[model] || modelNames['standard'];
     const price = 198000;
     const taxPrice = Math.floor(price * 1.1);
 
