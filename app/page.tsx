@@ -23,8 +23,16 @@ export default function Sitemap() {
   ];
 
   const buyPages = [
-    { title: "受験生モデル購入", href: "/buy/student", tag: "Student" },
-    { title: "ペットモデル購入", href: "/buy/pet", tag: "Pet" },
+    { title: "受験生モデル購入", href: "/buy/checkout?model=student&coupon=AF-STUDENT02", tag: "Student" },
+    { title: "ペットモデル購入", href: "/buy/checkout?model=pet", tag: "Pet" },
+    { title: "介護モデル購入", href: "/buy/checkout?model=elderly", tag: "Elderly" },
+    { title: "オフィスモデル購入", href: "/buy/checkout?model=office", tag: "Office" },
+    { title: "花粉モデル購入", href: "/buy/checkout?model=pollen", tag: "Pollen" },
+    { title: "新築モデル購入", href: "/buy/checkout?model=newhouse", tag: "Home" },
+    { title: "ホテルモデル購入", href: "/buy/checkout?model=hotel", tag: "Stay" },
+    { title: "飲食モデル購入", href: "/buy/checkout?model=restaurant", tag: "Chef" },
+    { title: "サロンモデル購入", href: "/buy/checkout?model=salon", tag: "Beauty" },
+    { title: "車載モデル購入", href: "/buy/checkout?model=car", tag: "Drive" },
   ];
 
   return (
