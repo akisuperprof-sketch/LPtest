@@ -54,7 +54,7 @@ export default function NewHouseLP() {
                     { q: 'どのくらいの期間使えばいいですか？', a: '建材からの放散は数年続くと言われています。特に最初の1〜2年は24時間稼働をお勧めします。' },
                     { q: '木造住宅でも使えますか？', a: 'はい、もちろんです。木の香りは残しつつ、有害な化学物質臭だけを低減します。' },
                 ],
-                buyLink: '/buy/pet?model=newhouse'
+                buyLink: '/buy/checkout?model=newhouse'
             }}
         />
     );

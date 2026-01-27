@@ -54,7 +54,7 @@ export default function RestaurantLP() {
                     { q: '油でベタベタになりませんか？', a: '本体は定期的な拭き掃除が必要ですが、フィルター交換は不要なのでランニングコストは抑えられます。' },
                     { q: '厨房と客席、どちらに置くべきですか？', a: 'AirFuture Proは広範囲をカバーできるため、客席の中央や厨房との境界付近への設置をお勧めします。' },
                 ],
-                buyLink: '/buy/pet?model=restaurant'
+                buyLink: '/buy/checkout?model=restaurant'
             }}
         />
     );

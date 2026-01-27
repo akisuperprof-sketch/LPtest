@@ -22,7 +22,7 @@ export default function PetLP() {
                         <a href="#product" className="hover:text-orange-600 transition-colors">製品の特長</a>
                         <a href="#evidence" className="hover:text-orange-600 transition-colors">実証データ</a>
                         <a href="#faq" className="hover:text-orange-600 transition-colors">FAQ</a>
-                        <a href="/buy/pet" className="bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700 transition-all font-bold">
+                        <a href="/buy/checkout?model=pet" className="bg-orange-600 text-white px-6 py-2 rounded-full hover:bg-orange-700 transition-all font-bold">
                             今すぐ購入
                         </a>
                     </div>

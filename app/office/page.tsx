@@ -54,7 +54,7 @@ export default function OfficeLP() {
                     { q: '法人名義での領収書発行は可能ですか？', a: 'はい、可能です。購入画面で宛名をご指定いただけます。' },
                     { q: '複数台導入の相談はできますか？', a: 'はい、ボリュームディスカウントもございます。お問い合わせフォームよりご連絡ください。' },
                 ],
-                buyLink: '/buy/pet?model=office'
+                buyLink: '/buy/checkout?model=office'
             }}
         />
     );

@@ -33,6 +33,7 @@ function CheckoutContent() {
     const searchParams = useSearchParams();
     const model = searchParams.get('model') || 'standard';
     const isDemo = searchParams.get('demo') === 'true';
+    const coupon = searchParams.get('coupon');
     const [agreed, setAgreed] = useState(false);
     const [isSubmitting, setIsSubmitting] = useState(false);
 
@@ -53,7 +54,8 @@ function CheckoutContent() {
 
     const displayModelName = modelNames[model] || modelNames['standard'];
     const price = 198000;
-    const taxPrice = Math.floor(price * 1.1);
+    const discount = (coupon === 'AF-STUDENT02') ? 10000 : 0;
+    const finalPrice = price - discount;
 
     const handleCheckout = async () => {
         if (!agreed) {
@@ -134,7 +136,12 @@ function CheckoutContent() {
                                         </div>
                                     ) : (
                                         <div className="flex flex-col items-start gap-1">
-                                            <span className="text-2xl font-bold text-sky-600">¥{taxPrice.toLocaleString()}</span>
+                                            {discount > 0 && (
+                                                <div className="text-sm text-red-500 font-bold mb-1">
+                                                    クーポン適用: -¥{discount.toLocaleString()}
+                                                </div>
+                                            )}
+                                            <span className="text-2xl font-bold text-sky-600">¥{finalPrice.toLocaleString()}</span>
                                             <span className="text-xs text-slate-500">税込 / 送料無料</span>
                                         </div>
                                     )}
@@ -155,7 +162,7 @@ function CheckoutContent() {
                         {!isDemo && (
                             <div className="bg-slate-50 px-6 py-4 border-t border-slate-200 flex justify-between items-center">
                                 <span className="font-bold text-slate-700">お支払い合計</span>
-                                <span className="text-2xl font-bold text-sky-600">¥{taxPrice.toLocaleString()}</span>
+                                <span className="text-2xl font-bold text-sky-600">¥{finalPrice.toLocaleString()}</span>
                             </div>
                         )}
                     </div>

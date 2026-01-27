@@ -98,7 +98,7 @@ export default function Price() {
                                     </ul>
                                 </div>
 
-                                <a href="/buy/student?coupon=AF-STUDENT02" className="block w-full bg-sky-600 hover:bg-sky-500 text-white font-bold text-center py-5 rounded-xl text-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
+                                <a href="/buy/checkout?model=student&coupon=AF-STUDENT02" className="block w-full bg-sky-600 hover:bg-sky-500 text-white font-bold text-center py-5 rounded-xl text-xl shadow-lg hover:shadow-xl transition-all transform hover:-translate-y-1">
                                     今すぐ申し込む（購入手続きへ）
                                 </a>
                                 <p className="text-center text-slate-400 text-sm mt-4">

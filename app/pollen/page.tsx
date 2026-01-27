@@ -54,7 +54,7 @@ export default function PollenLP() {
                     { q: 'PM2.5にも効果はありますか？', a: 'はい。花粉より微細な粒子もしっかりキャッチ・分解します。' },
                     { q: '寝室に置いても音は気になりませんか？', a: '静音モード時は28dB以下。時計の秒針より静かです。' },
                 ],
-                buyLink: '/buy/pet?model=pollen'
+                buyLink: '/buy/checkout?model=pollen'
             }}
         />
     );

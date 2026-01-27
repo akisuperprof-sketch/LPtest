@@ -24,7 +24,7 @@ export default function PetCTA() {
                     </p>
 
                     <div className="flex flex-col sm:flex-row items-center justify-center gap-6">
-                        <a href="/buy/pet" className="bg-white text-orange-600 px-10 py-5 rounded-2xl text-xl font-bold shadow-2xl hover:bg-orange-50 transition-all hover:-translate-y-1 block w-full sm:w-auto">
+                        <a href="/buy/checkout?model=pet" className="bg-white text-orange-600 px-10 py-5 rounded-2xl text-xl font-bold shadow-2xl hover:bg-orange-50 transition-all hover:-translate-y-1 block w-full sm:w-auto">
                             今すぐ購入する
                         </a>
                         <a href="/support" className="border-2 border-white/30 text-white px-10 py-5 rounded-2xl text-xl font-bold backdrop-blur-sm hover:bg-white/10 transition-all block w-full sm:w-auto">

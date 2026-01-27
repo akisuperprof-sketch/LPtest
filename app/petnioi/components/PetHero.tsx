@@ -50,7 +50,7 @@ export default function PetHero() {
                     {/* CTA Button */}
                     <div className="mt-10 flex flex-col sm:flex-row gap-4">
                         <a
-                            href="/buy/pet"
+                            href="/buy/checkout?model=pet"
                             className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg relative overflow-hidden group transition-all text-center hover:scale-105"
                         >
                             <span className="flex items-center justify-center gap-2">

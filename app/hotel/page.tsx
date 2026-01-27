@@ -54,7 +54,7 @@ export default function HotelLP() {
                     { q: '客室に置きっぱなしでも大丈夫ですか？', a: 'はい、静音設計ですので、宿泊中のお客様の睡眠を妨げません。' },
                     { q: 'レンタルプランはありますか？', a: '法人様向けのリース・レンタルプランもご用意しております。詳細はお問い合わせください。' },
                 ],
-                buyLink: '/buy/pet?model=hotel'
+                buyLink: '/buy/checkout?model=hotel'
             }}
         />
     );

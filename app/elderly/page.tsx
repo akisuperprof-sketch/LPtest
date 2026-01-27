@@ -54,7 +54,7 @@ export default function ElderlyLP() {
                     { q: '一日中つけっぱなしでも電気代は大丈夫？', a: 'はい、省エネ設計のため、24時間稼働でも月額100〜200円程度です。' },
                     { q: '操作は難しくないですか？', a: 'ボタン一つで自動運転を開始します。複雑な設定は一切不要です。' },
                 ],
-                buyLink: '/buy/pet?model=elderly' // Fallback to pet buy page for now or generic
+                buyLink: '/buy/checkout?model=elderly'
             }}
         />
     );

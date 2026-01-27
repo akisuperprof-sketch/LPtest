@@ -54,7 +54,7 @@ export default function SalonLP() {
                     { q: 'アロマの香りまで消えてしまいませんか？', a: '人工的な強い化学物質臭を優先的に分解しますが、自然なアロマの香りは比較的残りやすい傾向にあります。' },
                     { q: 'どのくらいの広さまで対応していますか？', a: 'Proモデルなら〜30畳まで対応。広さに応じて複数台の設置をお勧めします。' },
                 ],
-                buyLink: '/buy/pet?model=salon'
+                buyLink: '/buy/checkout?model=salon'
             }}
         />
     );
