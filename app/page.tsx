@@ -95,29 +95,60 @@ export default function Sitemap() {
             <h2 className="text-xl font-bold mb-6 flex items-center gap-2 text-slate-800 border-b pb-2">
               <span className="text-2xl">🎥</span> プロモーション動画 (Creative Assets)
             </h2>
-            <div className="grid md:grid-cols-2 gap-6">
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                <h3 className="font-bold flex items-center gap-2 mb-4 text-sky-600">
-                  受験生応援モデル PV
-                </h3>
-                <video controls className="w-full rounded-lg shadow-md bg-black" poster="/hero-student.png">
-                  <source src="/promo-student.mp4" type="video/mp4" />
-                  Your browser does not support the video tag.
-                </video>
-                <p className="text-xs text-slate-500 mt-2 text-center">生成された動画ファイル: promo-student.mp4</p>
-              </div>
-              <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
-                <h3 className="font-bold flex items-center gap-2 mb-4 text-orange-600">
-                  ペットモデル PV
-                </h3>
-                <div className="aspect-video bg-slate-100 rounded-lg flex items-center justify-center text-slate-400">
-                  {/* Placeholder until generated, or video tag if ready */}
-                  <video controls className="w-full h-full rounded-lg shadow-md bg-black">
+            <div className="space-y-8">
+              {/* Current LPs */}
+              <div className="grid md:grid-cols-2 gap-6">
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                  <h3 className="font-bold flex items-center gap-2 mb-4 text-sky-600">
+                    受験生応援モデル PV
+                  </h3>
+                  <video controls className="w-full rounded-lg shadow-md bg-black" poster="/hero-student.png">
+                    <source src="/promo-student.mp4" type="video/mp4" />
+                    Your browser does not support the video tag.
+                  </video>
+                  <p className="text-xs text-slate-500 mt-2 text-center">生成された動画ファイル: promo-student.mp4</p>
+                </div>
+                <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                  <h3 className="font-bold flex items-center gap-2 mb-4 text-orange-600">
+                    ペットモデル PV
+                  </h3>
+                  <video controls className="w-full rounded-lg shadow-md bg-black">
                     <source src="/promo-pet.mp4" type="video/mp4" />
                     生成中 / 準備中...
                   </video>
+                  <p className="text-xs text-slate-500 mt-2 text-center">生成された動画ファイル: promo-pet.mp4</p>
                 </div>
-                <p className="text-xs text-slate-500 mt-2 text-center">生成された動画ファイル: promo-pet.mp4</p>
+              </div>
+
+              {/* Future Concepts */}
+              <div>
+                <h3 className="text-lg font-bold mb-4 text-slate-700 bg-slate-100 p-2 rounded-lg inline-block">Future Business Prototypes</h3>
+                <div className="grid md:grid-cols-2 gap-6">
+                  <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h4 className="font-bold mb-2 text-amber-500">Recruit Motion (縦型)</h4>
+                    <video controls className="w-full aspect-[9/16] rounded-lg shadow-md bg-black max-w-[200px] mx-auto">
+                      <source src="/recruit-demo.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                  <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h4 className="font-bold mb-2 text-red-500">Menu Motion (縦型)</h4>
+                    <video controls className="w-full aspect-[9/16] rounded-lg shadow-md bg-black max-w-[200px] mx-auto">
+                      <source src="/menu-demo.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                  <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h4 className="font-bold mb-2 text-blue-500">MySoku / Real Estate</h4>
+                    <video controls className="w-full rounded-lg shadow-md bg-black">
+                      <source src="/mysoku-demo.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                  <div className="bg-white p-6 rounded-xl shadow-sm border border-slate-200">
+                    <h4 className="font-bold mb-2 text-green-600">Local News Clip</h4>
+                    <video controls className="w-full rounded-lg shadow-md bg-black">
+                      <source src="/localnews-demo.mp4" type="video/mp4" />
+                    </video>
+                  </div>
+                </div>
               </div>
             </div>
           </section>

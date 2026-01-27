@@ -1,6 +1,7 @@
 import React from 'react';
 import { Composition, staticFile } from 'remotion';
 import { PromoVideo } from './PromoVideo';
+import { RecruitVideo, MenuVideo, RealEstateVideo, LocalNewsVideo } from './FutureConcepts';
 
 export const RemotionRoot: React.FC = () => {
     return (
@@ -43,7 +44,39 @@ export const RemotionRoot: React.FC = () => {
                     color: "#f97316" // orange-500
                 }}
             />
-            {/* Additional compositions can be added here for other niches */}
+            {/* New Business Idea Prototypes */}
+            <Composition
+                id="RecruitMotion"
+                component={RecruitVideo}
+                durationInFrames={30 * 15}
+                fps={30}
+                width={1080}
+                height={1920}
+            />
+            <Composition
+                id="MenuMotion"
+                component={MenuVideo}
+                durationInFrames={30 * 15}
+                fps={30}
+                width={1080}
+                height={1920}
+            />
+            <Composition
+                id="MySokuVideo"
+                component={RealEstateVideo}
+                durationInFrames={30 * 15}
+                fps={30}
+                width={1920}
+                height={1080}
+            />
+            <Composition
+                id="LocalNewsClip"
+                component={LocalNewsVideo}
+                durationInFrames={30 * 15}
+                fps={30}
+                width={1920}
+                height={1080}
+            />
         </>
     );
 };
