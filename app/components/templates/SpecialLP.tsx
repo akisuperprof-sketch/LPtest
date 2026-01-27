@@ -91,42 +91,88 @@ export default function SpecialLPTemplate({ data }: { data: LPData }) {
                 </div>
             </nav>
 
-            {/* Hero */}
-            <section className={`pt-32 pb-20 relative overflow-hidden ${data.colorTheme.secondary}`}>
-                <div className="max-w-7xl mx-auto px-4 grid lg:grid-cols-2 gap-12 items-center relative z-10">
-                    <motion.div initial={{ opacity: 0, x: -30 }} animate={{ opacity: 1, x: 0 }}>
-                        <div className={`inline-flex items-center gap-2 px-4 py-2 rounded-full text-sm font-bold mb-6 bg-white ${data.colorTheme.text}`}>
-                            <Sparkles size={16} />
-                            <span>{data.hero.badge}</span>
+            {/* Hero matched to Student LP Style */}
+            <div className="relative min-h-[85vh] overflow-hidden bg-slate-900 text-white flex items-center">
+                {/* Background Image */}
+                <motion.div
+                    className="absolute inset-0 transform origin-center"
+                    initial={{ scale: 1.2, opacity: 0 }}
+                    animate={{ scale: 1, opacity: 1 }}
+                    transition={{ duration: 1.5 }}
+                >
+                    <div className={`absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-slate-900/20 z-10 ${data.colorTheme.primary.replace('bg-', 'from-').split('-')[0] + '-900/50'}`} /> {/* Dynamic tint if possible, or just dark slate */}
+                    <img
+                        src={data.hero.imageSrc || "/hero-student.png"}
+                        alt="Hero Background"
+                        className="w-full h-full object-cover opacity-60"
+                    />
+                </motion.div>
+
+                <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid md:grid-cols-12 gap-12 items-center pt-20 pb-20">
+                    {/* Left Content */}
+                    <motion.div
+                        className="md:col-span-7"
+                        initial={{ opacity: 0, x: -30 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 0.8, delay: 0.2 }}
+                    >
+                        {/* Badge */}
+                        <div className={`inline-block ${data.colorTheme.primary} bg-opacity-20 border border-white/20 text-white font-bold px-4 py-1 rounded-full text-sm mb-6 backdrop-blur-md`}>
+                            {data.hero.badge}
                         </div>
-                        <h1 className="text-4xl md:text-6xl font-bold leading-tight mb-6">
+
+                        {/* Title */}
+                        <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight text-white drop-shadow-md">
                             {data.hero.title}
                         </h1>
-                        <p className="text-lg text-slate-600 mb-8 leading-relaxed">
+
+                        {/* Description */}
+                        <p className="mt-6 text-xl text-slate-100 leading-relaxed max-w-2xl text-shadow-sm font-medium">
                             {data.hero.description}
                         </p>
-                        <div className="flex flex-col sm:flex-row gap-4 mb-10">
-                            <button
-                                className={`px-8 py-4 rounded-full text-white text-lg font-bold shadow-lg transition-transform hover:-translate-y-1 ${data.colorTheme.primary}`}
-                                onClick={() => window.location.href = data.buyLink}
+
+                        {/* CTA Button */}
+                        <div className="mt-10 flex flex-col sm:flex-row gap-4">
+                            <a
+                                href={data.buyLink}
+                                className={`bg-white ${data.colorTheme.text} font-bold py-4 px-8 rounded-full text-lg shadow-lg relative overflow-hidden group transition-all text-center hover:bg-slate-100 hover:scale-105`}
                             >
-                                効果を試す →
-                            </button>
+                                <span className="flex items-center justify-center gap-2">
+                                    効果を試す
+                                    <CheckCircle2 size={20} />
+                                </span>
+                            </a>
+                            <div className="flex items-center justify-center gap-2 text-slate-300 mt-2 sm:mt-0 px-4 bg-black/30 rounded-full py-1 backdrop-blur-sm">
+                                <ShieldCheck size={18} className="text-emerald-400" />
+                                <span className="text-sm">30日間全額返金保証付き</span>
+                            </div>
                         </div>
-                        <div className="flex gap-6 text-sm font-bold text-slate-500">
-                            <div className="flex items-center gap-2"><CheckCircle2 size={18} className={data.colorTheme.text} /> {data.hero.benefit1}</div>
-                            <div className="flex items-center gap-2"><CheckCircle2 size={18} className={data.colorTheme.text} /> {data.hero.benefit2}</div>
+
+                        <div className="mt-8 flex gap-6 text-sm font-bold text-slate-300">
+                            <div className="flex items-center gap-2"><CheckCircle2 size={18} className="text-emerald-400" /> {data.hero.benefit1}</div>
+                            <div className="flex items-center gap-2"><CheckCircle2 size={18} className="text-emerald-400" /> {data.hero.benefit2}</div>
                         </div>
                     </motion.div>
-                    <motion.div initial={{ opacity: 0, scale: 0.9 }} animate={{ opacity: 1, scale: 1 }} className="relative">
-                        <div className="aspect-square bg-white rounded-3xl shadow-2xl p-8 flex items-center justify-center relative overflow-hidden">
-                            <div className={`absolute inset-0 opacity-10 ${data.colorTheme.secondary}`}></div>
-                            {/* Placeholder for image if generation fails */}
-                            <img src={data.hero.imageSrc || "/product-pro.png"} alt="Hero" className="max-h-full object-contain relative z-10 drop-shadow-xl" />
+
+                    {/* Right Product Image */}
+                    <motion.div
+                        className="md:col-span-5 relative" // Removed hidden md:block
+                        initial={{ opacity: 0, x: 50 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ duration: 1, delay: 0.5 }}
+                    >
+                        <div className="relative w-full aspect-square max-w-[500px] mx-auto">
+                            <div className={`absolute inset-0 ${data.colorTheme.primary} opacity-20 blur-3xl rounded-full animate-pulse`} />
+                            {/* Always show product cutout on top */}
+                            <img
+                                src="/product-angle-cutout.png"
+                                alt="AirFuture Product"
+                                className="object-contain drop-shadow-2xl relative z-10 w-full h-full"
+                            />
                         </div>
                     </motion.div>
                 </div>
-            </section>
+            </div>
 
             {/* Problem */}
             <section className="py-24 bg-white">

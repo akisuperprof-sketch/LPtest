@@ -1,99 +1,97 @@
 'use client';
 
 import { motion } from 'framer-motion';
-import { Shield, Sparkles, Heart } from 'lucide-react';
+import { Shield, Sparkles, Heart, CheckCircle2 } from 'lucide-react';
 
 export default function PetHero() {
     return (
-        <section className="relative min-h-[90vh] flex items-center justify-center overflow-hidden bg-[#FDF8F3]">
-            {/* Decorative Background Elements */}
-            <div className="absolute top-0 left-0 w-full h-full opacity-30 pointer-events-none">
-                <div className="absolute top-[10%] left-[10%] w-64 h-64 bg-orange-200 rounded-full blur-3xl animate-pulse"></div>
-                <div className="absolute bottom-[20%] right-[15%] w-96 h-96 bg-amber-100 rounded-full blur-3xl animate-pulse" style={{ animationDelay: '1s' }}></div>
-            </div>
+        <div className="relative min-h-[85vh] overflow-hidden bg-slate-900 text-white flex items-center">
+            {/* Background Image */}
+            <motion.div
+                className="absolute inset-0 transform origin-center"
+                initial={{ scale: 1.2, opacity: 0 }}
+                animate={{ scale: 1, opacity: 1 }}
+                transition={{ duration: 1.5 }}
+            >
+                <div className="absolute inset-0 bg-gradient-to-r from-slate-900/90 via-slate-900/60 to-slate-900/20 z-10" />
+                <img
+                    src="https://images.unsplash.com/photo-1548199973-03cce0bbc87b?auto=format&fit=crop&w=1600&q=80"
+                    alt="Cute Dog Background"
+                    className="w-full h-full object-cover opacity-60"
+                />
+            </motion.div>
 
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 relative z-10 py-20">
-                <div className="grid lg:grid-cols-2 gap-12 items-center">
-                    <motion.div
-                        initial={{ opacity: 0, x: -30 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ duration: 0.8 }}
-                    >
-                        <div className="inline-flex items-center gap-2 bg-orange-100 text-orange-700 px-4 py-2 rounded-full text-sm font-bold mb-6">
-                            <Sparkles size={16} />
-                            <span>ペット専用・強力脱臭特化モデル</span>
+            <div className="relative z-20 max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 w-full grid md:grid-cols-12 gap-12 items-center pt-20 pb-20">
+                {/* Left Content */}
+                <motion.div
+                    className="md:col-span-7"
+                    initial={{ opacity: 0, x: -30 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.8, delay: 0.2 }}
+                >
+                    {/* Badge */}
+                    <div className="inline-block bg-orange-500/20 border border-orange-500/50 text-orange-300 font-bold px-4 py-1 rounded-full text-sm mb-6 backdrop-blur-md">
+                        <span className="flex items-center gap-2"><Sparkles size={14} /> ペット専用・強力脱臭モデル</span>
+                    </div>
+
+                    {/* Title */}
+                    <h1 className="text-4xl md:text-5xl lg:text-6xl font-bold tracking-tight mb-6 leading-tight text-white drop-shadow-md">
+                        「ペットのニオイ」を<br />
+                        <span className="text-orange-400">なかったこと</span>に。
+                    </h1>
+
+                    {/* Description */}
+                    <p className="mt-6 text-xl text-slate-100 leading-relaxed max-w-2xl text-shadow-sm font-medium">
+                        来客が驚く、圧倒的な脱臭パワー。<br />
+                        猫カフェやペットサロンでも採用される技術で、<br className="md:hidden" />
+                        愛犬・愛猫との暮らしをもっと快適に。
+                    </p>
+
+                    {/* CTA Button */}
+                    <div className="mt-10 flex flex-col sm:flex-row gap-4">
+                        <a
+                            href="/buy/pet"
+                            className="bg-gradient-to-r from-orange-500 to-orange-600 hover:from-orange-400 hover:to-orange-500 text-white font-bold py-4 px-8 rounded-full text-lg shadow-lg relative overflow-hidden group transition-all text-center hover:scale-105"
+                        >
+                            <span className="flex items-center justify-center gap-2">
+                                脱臭効果を試す
+                                <CheckCircle2 size={20} />
+                            </span>
+                        </a>
+                        <div className="flex items-center justify-center gap-2 text-slate-300 mt-2 sm:mt-0 px-4 bg-black/30 rounded-full py-1 backdrop-blur-sm">
+                            <Shield size={18} className="text-emerald-400" />
+                            <span className="text-sm">30日間全額返金保証付き</span>
                         </div>
+                    </div>
 
-                        <h1 className="text-4xl md:text-6xl font-bold text-slate-900 leading-tight mb-6">
-                            「ペットのニオイ」を<br />
-                            <span className="text-orange-600">なかったこと</span>に。
-                        </h1>
+                    <div className="mt-8 flex gap-6 text-sm font-bold text-slate-300">
+                        <div className="flex items-center gap-2"><Heart size={18} className="text-pink-400" /> ペット安全試験済み</div>
+                        <div className="flex items-center gap-2"><CheckCircle2 size={18} className="text-emerald-400" /> アンモニア99%除去</div>
+                    </div>
+                </motion.div>
 
-                        <p className="text-lg md:text-xl text-slate-600 mb-8 leading-relaxed max-w-xl">
-                            来客が驚く、圧倒的な脱臭パワー。<br />
-                            猫カフェやペットサロンでも採用される「AIO-2技術」で、<br />
-                            家族にもペットにも、真に清潔な空気を。
-                        </p>
-
-                        <div className="flex flex-col sm:flex-row gap-4">
-                            <button className="bg-orange-600 hover:bg-orange-700 text-white px-8 py-4 rounded-full text-lg font-bold shadow-lg shadow-orange-200 transition-all hover:-translate-y-1">
-                                無料で脱臭性能を試す →
-                            </button>
-                            <button className="bg-white border-2 border-slate-200 text-slate-700 px-8 py-4 rounded-full text-lg font-bold hover:bg-slate-50 transition-all">
-                                導入事例を見る
-                            </button>
-                        </div>
-
-                        <div className="mt-10 flex items-center gap-6 text-slate-500 text-sm">
-                            <div className="flex items-center gap-2">
-                                <Shield className="text-orange-500" size={18} />
-                                <span>30日間全額返金保証</span>
-                            </div>
-                            <div className="flex items-center gap-2">
-                                <Heart className="text-orange-500" size={18} />
-                                <span>ペット安全試験済み</span>
-                            </div>
-                        </div>
-                    </motion.div>
-
-                    <motion.div
-                        initial={{ opacity: 0, scale: 0.9 }}
-                        animate={{ opacity: 1, scale: 1 }}
-                        transition={{ duration: 1, delay: 0.2 }}
-                        className="relative"
-                    >
-                        {/* Hero Image Container */}
-                        <div className="aspect-square relative rounded-3xl overflow-hidden shadow-2xl bg-white border-8 border-white">
-                            {/* Using a solid background with a product shot since generate_image failed */}
-                            <div className="absolute inset-0 bg-gradient-to-br from-orange-50 to-amber-50 flex items-center justify-center p-12">
-                                <img
-                                    src="/product-pro.png"
-                                    alt="AirFuture Pro"
-                                    className="max-h-full object-contain filter drop-shadow-2xl translate-y-4"
-                                />
-
-                                {/* Floating Badges */}
-                                <div className="absolute top-10 right-10 bg-white/80 backdrop-blur-md p-4 rounded-2xl shadow-lg border border-white">
-                                    <p className="text-xs font-bold text-slate-400 uppercase mb-1">Ammonia removal</p>
-                                    <p className="text-2xl font-bold text-orange-600">99.9%</p>
-                                </div>
-                                <div className="absolute bottom-10 left-10 bg-white/80 backdrop-blur-md p-4 rounded-2xl shadow-lg border border-white">
-                                    <p className="text-xs font-bold text-slate-400 mb-1">User Satisfaction</p>
-                                    <div className="flex text-amber-400 gap-1">
-                                        {"★★★★★".split("").map((s, i) => <span key={i}>{s}</span>)}
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
-
+                {/* Right Product Image */}
+                <motion.div
+                    className="md:col-span-5 relative"
+                    initial={{ opacity: 0, x: 50 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 1, delay: 0.5 }}
+                >
+                    <div className="relative w-full aspect-square max-w-[500px] mx-auto">
+                        <div className="absolute inset-0 bg-orange-500/20 blur-3xl rounded-full animate-pulse" />
+                        <img
+                            src="/product-angle-cutout.png"
+                            alt="AirFuture Product"
+                            className="object-contain drop-shadow-2xl relative z-10 w-full h-full"
+                        />
                         {/* Pet tag indicator */}
-                        <div className="absolute -top-6 -right-6 w-32 h-32 bg-orange-600 text-white rounded-full flex flex-col items-center justify-center font-bold rotate-12 shadow-xl">
+                        <div className="absolute -top-0 -right-0 w-28 h-28 bg-orange-600 text-white rounded-full flex flex-col items-center justify-center font-bold rotate-12 shadow-xl z-20 border-4 border-slate-900">
                             <span className="text-xs">獣医師も</span>
-                            <span className="text-xl leading-none">太鼓判</span>
+                            <span className="text-lg leading-none">太鼓判</span>
                         </div>
-                    </motion.div>
-                </div>
+                    </div>
+                </motion.div>
             </div>
-        </section>
+        </div>
     );
 }
